@@ -1,0 +1,125 @@
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  --color-boton: #072ac8;
+  --color-ironhack: #43d2ff;
+  --color-gris-oscuro: #292e47;
+  --color-gris: #6b708d;
+  --color-gris-claro: #f2f4fc;
+  --color-azul: #a2d6f9;
+  --color-azul-claro: #d1edff;
+  --color-azul-claro-2: #ecf7ff;
+  --color-amarillo: #ffc600;
+  --color-gris-rgb: rgb(107, 112, 141, 0.1);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--color-gris-claro);
+  min-height: 100vh;
+}
+
+h1 {
+  /* H1 */
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 60px;
+  line-height: 70px;
+}
+h2 {
+  /* H2 */
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 50px;
+  line-height: 59px;
+  /* identical to box height */
+}
+h3 {
+  /* H3 */
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 47px;
+  /* identical to box height */
+}
+h4 {
+  /* H4 */
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 28px;
+}
+.intro-text {
+  /* Body/Regular */
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 150%;
+  /* identical to box height, or 30px */
+}
+.intro-text-medium {
+  /* Body/Medium */
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 28px;
+}
+.headline-text {
+  /* Headline/Regular */
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 150%;
+  /* identical to box height, or 26px */
+}
+.headline-text-medium {
+  /* Headline/Medium */
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 17px;
+  line-height: 130%;
+  /* identical to box height, or 22px */
+}
+.caption-text {
+  /* Caption/1 */
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 18px;
+  /* identical to box height */
+}
+.caption-text-2 {
+  /* Caption/2 */
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 15px;
+}
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+}

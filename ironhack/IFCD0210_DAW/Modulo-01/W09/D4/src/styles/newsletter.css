@@ -1,0 +1,61 @@
+.newsletter-section {
+  background-color: var(--color-amarillo);
+}
+
+.newsletter-section .container {
+  padding-top: 7rem;
+  padding-bottom: 7rem;
+}
+
+.newsletter-title {
+  color: var(--color-gris-oscuro);
+  margin-bottom: 2rem;
+}
+
+.newsletter-form-container {
+  gap: 15px;
+  margin-top: 2rem;
+}
+
+.newsletter-input-wrapper {
+  position: relative;
+  flex: 2;
+}
+
+.newsletter-icon {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--color-gris-oscuro);
+  z-index: 2;
+  width: 20px;
+  height: 20px;
+}
+
+.newsletter-input {
+  width: 100%;
+  padding: 1rem 1rem 1rem 3rem;
+  color: var(--color-gris-oscuro);
+  border: none;
+  height: 100%;
+}
+
+.newsletter-input::placeholder {
+  color: var(--color-gris-oscuro);
+}
+
+.newsletter-submit-btn {
+  flex: 1;
+  background-color: var(--color-boton);
+  color: white;
+  border: none;
+  border-radius: 0;
+  padding: 1rem 2rem;
+  height: auto;
+}
+
+.newsletter-submit-btn:hover {
+  background-color: var(--color-boton);
+  opacity: 0.9;
+}

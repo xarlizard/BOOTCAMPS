@@ -1,0 +1,183 @@
+/* Reset básico para eliminar márgenes y padding predeterminados */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Estilos base para el body
+   Usamos Arial como fuente principal y sans-serif como respaldo */
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+}
+
+/* Header principal con imagen de fondo
+   He usado una imagen aleatoria de picsum.photos como placeholder
+   El position: relative es necesario para el overlay oscuro */
+.main-header {
+  background-image: url("https://picsum.photos/1200/400");
+  background-size: cover;
+  background-position: center;
+  color: white;
+  text-align: center;
+  padding: 4rem 0;
+  position: relative;
+}
+
+/* Esto crea un overlay oscuro sobre la imagen del header */
+.main-header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+/* El z-index: 2 asegura que el texto esté por encima del overlay oscuro */
+.main-header h1,
+.main-header nav {
+  position: relative;
+  z-index: 2;
+}
+
+/* Estilos para el título principal
+   El text-shadow ayuda a que el texto se lea mejor sobre la imagen */
+.main-header h1 {
+  font-size: 3rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  margin-bottom: 1rem;
+}
+
+/* Navegación horizontal con flexbox */
+nav ul {
+  list-style: none;
+  padding: 1rem 0;
+}
+
+nav ul li {
+  display: inline;
+  margin: 0 1rem;
+}
+
+/* Enlaces de navegación con efecto hover
+   La transición hace que el cambio de color sea suave */
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 3px;
+  transition: background-color 0.3s;
+}
+
+nav ul li a:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Contenedor principal centrado
+   max-width ayuda a que el contenido no sea demasiado ancho en pantallas grandes */
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+section {
+  margin-bottom: 3rem;
+}
+
+/* Tarjetas de noticias con flexbox
+   Me gustó usar display: flex para alinear la imagen con el contenido */
+.noticia {
+  border: 1px solid #ddd;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+/* Imagen circular en las noticias
+   object-fit: cover evita que las imágenes se deformen */
+.noticia-img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+  margin: 0;
+}
+
+.noticia-content {
+  flex: 1;
+}
+
+/* Efecto hover en las noticias */
+.noticia:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.noticia h3 {
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  font-size: 1.4rem;
+}
+
+.noticia p {
+  column-count: 1;
+  text-align: justify;
+  letter-spacing: 0.5px;
+  line-height: 1.8;
+  color: #444;
+  hyphens: auto;
+}
+
+.noticia p::first-line {
+  font-weight: bold;
+}
+
+/* Barra lateral con lista de enlaces
+   El background-color suave ayuda a distinguirlo del contenido principal */
+aside {
+  background-color: #f8f9fa;
+  padding: 1.5rem;
+  margin: 2rem auto;
+  max-width: 1200px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+aside ul {
+  list-style: none;
+}
+
+aside ul li {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #e9ecef;
+}
+
+aside ul li:hover {
+  cursor: pointer;
+  color: blue;
+}
+
+aside ul li:last-child {
+  border-bottom: none;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 2rem;
+  background-color: #2c3e50;
+  color: white;
+  margin-top: 3rem;
+}

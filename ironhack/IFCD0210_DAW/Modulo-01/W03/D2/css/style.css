@@ -1,0 +1,233 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+html {
+  scroll-padding-top: 60px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 60px 20px 0;
+}
+
+.header {
+  height: 50px;
+  background-color: #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  width: 100%;
+  top: 0;
+}
+
+.header .navbar ul {
+  list-style: none;
+  display: flex;
+}
+
+.header .navbar ul li:not(:last-child) {
+  margin-right: 30px;
+}
+
+.header .navbar a {
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.header .navbar a:hover {
+  text-decoration: underline;
+}
+
+section {
+  margin-bottom: 40px;
+}
+
+section hr {
+  margin-bottom: 20px;
+}
+
+.title-section {
+  font-size: 22px;
+  text-transform: uppercase;
+}
+
+#intro article {
+  display: flex;
+  flex-direction: row;
+  background-color: #e3e3e3;
+}
+
+#intro article div {
+  flex: 0 0 50%;
+}
+
+#intro .image img {
+  width: 100%;
+  height: auto;
+}
+
+#intro .text {
+  text-align: right;
+  padding: 30px;
+  background: rgb(214, 149, 255);
+  background: linear-gradient(
+    0deg,
+    rgba(214, 149, 255, 1) 0%,
+    rgba(148, 255, 250, 1) 100%
+  );
+}
+
+#intro .text h1 {
+  font-size: 50px;
+  margin-bottom: 10px;
+}
+
+#intro .text h2 {
+  font-size: 18px;
+}
+
+#intro .text q {
+  display: block;
+  margin-top: 30px;
+  font-size: 14px;
+  font-style: italic;
+}
+
+#about-me p {
+  line-height: 1.5;
+}
+
+#hobbies article,
+#other-hobbies article,
+#characters article {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 30px 20px;
+}
+
+.big-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 300px;
+  margin: 10px;
+  padding: 15px;
+  gap: 10px;
+}
+
+.big-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.big-card h4 {
+  text-transform: uppercase;
+}
+
+.little-card {
+  width: 30%;
+  background-color: #ca98e9;
+  padding: 25px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.little-card img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.little-card p {
+  font-size: 17px;
+}
+
+.big-card, .little-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 15px;
+}
+
+#characters .big-card {
+  background-color: #f5f5f5;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+#characters .big-card img {
+  height: 180px;
+  transition: transform 0.3s ease;
+}
+
+#characters .big-card img:hover {
+  transform: scale(1.05);
+}
+
+#characters .sakura img:hover {
+  transform: rotate(30deg);
+}
+
+#characters .magica-doremi img:hover {
+  transform: translate(0, -30px);
+}
+
+#characters .nezuko img:hover {
+  transform: scale(1.5);
+}
+
+#characters .sailormoon img:hover {
+  transform: skewX(50deg);
+}
+
+#characters .doraemon:hover {
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
+}
+
+#characters .azuki img:hover {
+  opacity: 0.5;
+}
+
+#characters article {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+article {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* Optional: Add hover effect */
+.big-card img:hover,
+.little-card img:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+}
+
+footer {
+  background-color: #333;
+  color: #fff;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

@@ -1,0 +1,120 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+html {
+  scroll-padding-top: 60px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 60px 20px 0;
+}
+
+.header {
+  height: 50px;
+  background-color: #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  width: 100%;
+  top: 0;
+}
+
+.header .navbar ul {
+  list-style: none;
+  display: flex;
+}
+
+.header .navbar ul li:not(:last-child) {
+  margin-right: 30px;
+}
+
+.header .navbar a {
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.header .navbar a:hover {
+  text-decoration: underline;
+}
+
+section {
+  margin-bottom: 40px;
+}
+
+section hr {
+  margin-bottom: 20px;
+}
+
+.title-section {
+  font-size: 22px;
+  text-transform: uppercase;
+}
+
+#bomb-attack article {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  gap: 100px 145px;
+  padding-top: 20px;
+}
+
+#bomb-attack .bomb {
+  width: 25%;
+  text-align: center;
+  background: url("https://cdn-icons-png.flaticon.com/512/4357/4357187.png")
+    no-repeat;
+  background-position: center;
+  background-size: contain;
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
+}
+
+#bomb-attack .bomb.explosive:hover {
+  background: url("https://cdn-icons-png.freepik.com/512/12695/12695429.png")
+    no-repeat;
+  background-position: center;
+  background-size: contain;
+  transform: scale(1.5);
+}
+
+#bomb-attack .bomb.water {
+  position: relative;
+}
+
+#bomb-attack .bomb.water::after {
+  content: "";
+  background: url("https://cdn-icons-png.flaticon.com/512/8312/8312504.png")
+    no-repeat;
+  background-position: center;
+  background-size: contain;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200px;
+  height: 200px;
+  transition: transform 1.2s ease-in-out;
+  transform: translateY(100%);
+}
+
+#bomb-attack .bomb.water:hover::after {
+  transform: translateY(20px) scale(1.2);
+}
+
+footer {
+  background-color: #333;
+  color: #fff;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

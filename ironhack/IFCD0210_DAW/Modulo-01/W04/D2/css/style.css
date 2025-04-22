@@ -1,0 +1,178 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+html {
+  scroll-padding-top: 60px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 80px 20px 60px;
+}
+
+.header {
+  height: 50px;
+  background-color: #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1;
+}
+
+.header .navbar ul {
+  list-style: none;
+  display: flex;
+}
+
+.header .navbar ul li:not(:last-child) {
+  margin-right: 30px;
+}
+
+.header .navbar a {
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.header .navbar a:hover {
+  text-decoration: underline;
+}
+
+section {
+  margin-bottom: 40px;
+}
+
+section hr {
+  margin-bottom: 20px;
+}
+
+.title-section {
+  font-size: 22px;
+  text-transform: uppercase;
+}
+
+#contact-with-us .form-titles {
+  margin: 40px auto 30px;
+  text-align: center;
+}
+
+#contact-with-us .form-titles h3 {
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+#contact-with-us .form-titles h4 {
+  font-weight: 400;
+}
+
+#contact-with-us form {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+#contact-with-us form div {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+#contact-with-us form label {
+  text-align: left;
+  margin-bottom: 5px;
+  font-size: 14px;
+}
+
+#contact-with-us form input,
+#contact-with-us form textarea,
+#contact-with-us form select {
+  border: 1px solid #bbb;
+  border-radius: 5px;
+  padding: 5px 10px;
+}
+
+#contact-with-us form select:has(option[value=""]:checked) {
+  color: #757575;
+}
+
+#contact-with-us form fieldset {
+  padding: 20px;
+  margin-top: 30px;
+  border: 1px solid #bbb;
+  border-radius: 5px;
+}
+
+#contact-with-us form fieldset legend {
+  padding: 0 15px;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+
+#contact-with-us form fieldset div:last-child {
+  margin-bottom: 0;
+}
+
+#contact-with-us form .extra-ingredients,
+#contact-with-us form .order-delivery {
+  margin: 5px 0 0 0;
+}
+
+#contact-with-us form .extra-ingredients label:not(:last-child),
+#contact-with-us form .order-delivery label:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+#contact-with-us form input[type="checkbox"],
+#contact-with-us form input[type="radio"] {
+  vertical-align: middle;
+  margin-right: 10px;
+}
+
+#contact-with-us button {
+  display: block;
+  margin: 25px auto 0;
+  padding: 10px 30px;
+  border: none;
+  background-color: #007bff;
+  color: #fff;
+  border-radius: 5px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+/* Confirm Page Form */
+#contact-with-us .form-message {
+  max-width: 400px;
+  height: 150px;
+  margin: auto;
+  background-color: #ddd;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#contact-with-us .form-message h4 {
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+/* End Confirm Page Form */
+
+footer {
+  background-color: #333;
+  color: #fff;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}

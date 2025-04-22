@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formularios HTML</title>
+
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+
+  <body>
+    <header class="header">
+      <nav class="navbar">
+        <ul>
+          <li><a href="#contact-with-us">Formulario</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="container">
+      <section id="contact-with-us">
+        <h3 class="title-section">Formulario</h3>
+        <hr />
+        <article>
+          <div class="form-titles">
+            <h3>Formulario de pedido</h3>
+            <h4>¡Haznos tu encargo fácilmente!</h4>
+          </div>
+          <form action="recibido.html" method="GET">
+            <div>
+              <label for="courtesy">Tratamiento</label>
+              <select id="courtesy" name="courtesy">
+                <option value="" disabled="" selected="">
+                  Selecciona una opción
+                </option>
+                <option value="sr">Sr.</option>
+                <option value="sra">Sra.</option>
+                <option value="otros">Otros</option>
+              </select>
+            </div>
+            <div>
+              <label for="name">Nombre</label>
+              <input type="text" id="name" name="name" placeholder="Nombre" />
+            </div>
+            <div>
+              <label for="surnames">Apellidos</label>
+              <input
+                type="text"
+                id="surnames"
+                name="surnames"
+                placeholder="Apellidos"
+                required
+              />
+            </div>
+            <div>
+              <label for="age">Edad</label>
+              <input
+                type="number"
+                id="age"
+                name="age"
+                min="18"
+                placeholder="Mínimo 18 años"
+              />
+            </div>
+            <div>
+              <label for="email">Correo electrónico</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="ejemplo@correo.com"
+                required
+              />
+            </div>
+            <div>
+              <label for="phone">Teléfono</label>
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                placeholder="123456789"
+                pattern="\d{9}"
+              />
+            </div>
+            <div>
+              <label for="subject">Asunto</label>
+              <input
+                type="text"
+                id="subject"
+                name="subject"
+                placeholder="Asunto"
+                required
+              />
+            </div>
+            <div>
+              <label for="comment">Comentario</label>
+              <textarea
+                id="comment"
+                name="comment"
+                rows="4"
+                placeholder="Escribe aquí tu mensaje... (Máximo 150 caracteres)"
+                maxlength="150"
+              ></textarea>
+            </div>
+            <fieldset>
+              <legend>Su pedido</legend>
+              <div>
+                <label for="pizza-types">Tipo de pizza</label>
+                <select id="pizza-types" name="pizza-types" required>
+                  <option value="" disabled="" selected="">
+                    Selecciona un tipo de pizza
+                  </option>
+                  <option value="margarita">Pizza Margarita</option>
+                  <option value="pepperoni">Pizza Pepperoni</option>
+                  <option value="4-quesos">Pizza 4 Quesos</option>
+                  <option value="jamon-y-queso">Pizza de Jamón y Queso</option>
+                  <option value="barbacoa">Pizza Barbacoa</option>
+                  <option value="napolitana">Pizza Napolitana</option>
+                </select>
+              </div>
+              <div>
+                <label>Ingredientes extra</label>
+                <div class="extra-ingredients">
+                  <label
+                    ><input
+                      type="checkbox"
+                      name="extra-ingredients"
+                      value="queso"
+                    />Queso</label
+                  >
+                  <label
+                    ><input
+                      type="checkbox"
+                      name="extra-ingredients"
+                      value="cebolla"
+                    />Cebolla</label
+                  >
+                  <label
+                    ><input
+                      type="checkbox"
+                      name="extra-ingredients"
+                      value="aceitunas"
+                    />Aceitunas</label
+                  >
+                  <label
+                    ><input
+                      type="checkbox"
+                      name="extra-ingredients"
+                      value="champinones"
+                    />Champiñones</label
+                  >
+                </div>
+              </div>
+              <div>
+                <label>¿Dónde quieres tu pedido?</label>
+                <div class="order-delivery">
+                  <label
+                    ><input
+                      type="radio"
+                      name="order-delivery"
+                      value="a-domicilio"
+                    />A domicilio</label
+                  >
+                  <label
+                    ><input
+                      type="radio"
+                      name="order-delivery"
+                      value="recoger-en-tienda"
+                    />Recoger en tienda</label
+                  >
+                </div>
+              </div>
+            </fieldset>
+            <button type="submit">Enviar</button>
+          </form>
+        </article>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>&copy; 2025 - Formularios HTML</p>
+    </footer>
+  </body>
+</html>

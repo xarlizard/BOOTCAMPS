@@ -1,0 +1,8 @@
+.services-section {
+  padding: 60px 0;
+}
+
+.services-section h2 {
+  color: var(--color-gris-oscuro);
+  font-weight: 600;
+} 

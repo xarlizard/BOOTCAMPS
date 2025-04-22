@@ -1,0 +1,49 @@
+.navbar {
+  background-color: var(--color-gris-claro) !important;
+  padding-top: 40px !important;
+  box-shadow: none;
+  border: none;
+}
+
+.nav-link {
+  margin: 0 10px;
+  transition: color 0.3s ease;
+  color: #333 !important;
+}
+
+.nav-link:hover {
+  color: var(--color-boton) !important;
+}
+
+.nav-link.active {
+  color: var(--color-boton) !important;
+  font-weight: 500;
+}
+
+.navbar-brand {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+/* Centramos navigation links */
+.navbar-collapse {
+  justify-content: space-between;
+}
+
+/* Forzamos estado del boton on hover */
+.btn-primary:hover {
+  background-color: var(--color-boton) !important;
+  opacity: 0.9;
+}
+
+/* Responsive adjustments */
+@media (max-width: 991px) {
+  .navbar-nav {
+    text-align: center;
+    margin: 1rem 0;
+  }
+
+  .btn-primary {
+    margin-top: 0.5rem;
+  }
+}

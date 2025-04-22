@@ -1,0 +1,148 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 0 20px;
+}
+
+.header {
+  height: 50px;
+  background-color: #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header .navbar ul {
+  list-style: none;
+  display: flex;
+}
+
+.header .navbar ul li:not(:last-child) {
+  margin-right: 30px;
+}
+
+.header .navbar a {
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.header .navbar a:hover {
+  text-decoration: underline;
+}
+
+section {
+  margin-bottom: 40px;
+}
+
+section hr {
+  margin-bottom: 20px;
+}
+
+.title-section {
+  font-size: 22px;
+  text-transform: uppercase;
+}
+
+#intro article {
+  display: flex;
+  flex-direction: row;
+  background-color: #e3e3e3;
+}
+
+#intro article div {
+  flex: 0 0 50%;
+}
+
+#intro .image img {
+  width: 100%;
+  height: auto;
+}
+
+#intro .text {
+  text-align: right;
+  padding: 30px;
+  background: rgb(214, 149, 255);
+  background: linear-gradient(
+    0deg,
+    rgba(214, 149, 255, 1) 0%,
+    rgba(148, 255, 250, 1) 100%
+  );
+}
+
+#intro .text h1 {
+  font-size: 50px;
+  margin-bottom: 10px;
+}
+
+#intro .text h2 {
+  font-size: 18px;
+}
+
+#intro .text q {
+  display: block;
+  margin-top: 30px;
+  font-size: 14px;
+  font-style: italic;
+}
+
+#about-me p {
+  line-height: 1.5;
+}
+
+#hobbies article,
+#other-hobbies article {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 30px 20px;
+}
+
+.big-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 30%;
+  background-color: #91f1eb;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.big-card img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.big-card h4 {
+  text-transform: uppercase;
+}
+
+.little-card {
+  width: 30%;
+  background-color: #ca98e9;
+  padding: 25px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.little-card p {
+  font-size: 17px;
+}
+
+footer {
+  background-color: #333;
+  color: #fff;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

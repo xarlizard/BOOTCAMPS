@@ -1,0 +1,80 @@
+.contact-section {
+  padding: 80px 0;
+  max-width: 800px;
+}
+
+.contact-section h1 {
+  color: var(--color-gris-oscuro);
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 60px;
+  line-height: 70px;
+}
+
+.intro-text {
+  color: var(--color-gris-oscuro);
+  font-size: 1rem;
+  margin-bottom: 8px;
+}
+
+.contact-input {
+  background-color: var(--color-gris-rgb) !important;
+  border: none;
+  border-radius: 0 !important;
+  color: var(--color-gris-oscuro) !important;
+  padding: 16px 20px !important;
+}
+
+.contact-input::placeholder {
+  color: var(--color-gris-oscuro);
+  opacity: 0.7;
+}
+
+.contact-input:focus {
+  box-shadow: none;
+  border: 1px solid var(--color-boton);
+  border-radius: 0 !important;
+}
+
+/* Make the textarea resizable only vertically */
+textarea.contact-input {
+  resize: vertical;
+}
+
+.contact-submit-btn {
+  background-color: var(--color-boton) !important;
+  border: none !important;
+  border-radius: 0 !important;
+  padding: 16px 20px !important;
+  font-weight: 500;
+  transition: opacity 0.3s ease;
+}
+
+.contact-submit-btn:hover {
+  opacity: 0.9;
+  background-color: var(--color-boton) !important;
+}
+
+.contact-submit-btn:active,
+.contact-submit-btn:focus {
+  background-color: var(--color-boton) !important;
+  box-shadow: none !important;
+}
+
+.form-control.is-invalid {
+  border-color: #dc3545 !important;
+  background-image: none !important;
+}
+
+.invalid-feedback {
+  color: #dc3545;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+}
+
+/* Override Bootstrap's default validation icon */
+.form-control.is-invalid,
+.form-control.is-valid {
+  background-image: none !important;
+}

@@ -1,0 +1,142 @@
+/* Estilos generales para el proyecto */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+}
+
+/* Estilos para el header, usamos una imagen randomizada cada vez pero con la misma resolucion */
+.hero-header {
+  background-image: url("https://picsum.photos/1200/400");
+  background-size: cover;
+  background-position: center;
+  height: 400px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.header-content {
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 2rem;
+  color: white;
+  border-radius: 10px;
+}
+
+/* Menu de navegacion */
+nav {
+  background-color: #333;
+  padding: 1rem;
+  ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+  }
+  a {
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+  }
+  a.active {
+    background-color: #666;
+  }
+  a:hover {
+    background-color: #555;
+  }
+}
+
+
+/* Contenido principal */
+main {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+section {
+  margin-bottom: 2rem;
+}
+
+h1,
+h2 {
+  margin-bottom: 1rem;
+}
+
+a{
+    color: white;
+}
+
+/* Grid para presentaciones */
+.art-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.art-item {
+  text-align: center;
+  img {
+    max-width: 100%;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    cursor: pointer;
+  }
+}
+
+/* Grid para cantantes */
+.artist-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  padding: 2rem 0;
+}
+
+.artist-card {
+  text-align: center;
+  padding: 1rem;
+  background-color: #f5f5f5;
+  border-radius: 10px;
+  img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+    cursor: pointer;
+  }
+}
+
+/* Pagina de sobre nosotros */
+.about-section {
+  max-width: 800px;
+  margin: 0 auto 2rem auto;
+}
+
+footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+}
+
+/* Diseño responsive, venga Jarko no me digas que esto ya es demasiado que sino lo hago no me quedo tranquilo :P */
+@media (max-width: 768px) {
+  .hero-header {
+    height: 300px;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+}
