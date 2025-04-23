@@ -1,0 +1,11 @@
+sort1 uses: Bubble Sort
+
+How do you know?: This one also got super slow when we threw more numbers at it, same O(n squared) thing. It was a bit slower than the other one, so maybe it's that bubble sort that does a bunch of swaps.
+
+sort2 uses: Merge Sort
+
+How do you know?: Doubled the numbers, and the time just about doubled too. That's that O(n log n) expected behaviour, which is what a merge sort does
+
+sort3 uses: Selection Sort
+
+How do you know?: Tthe time kinda went through the roof when we doubled the numbers, like it squared or something. That's that O(n squared) vibe, which is what selection sort does. Plus, it felt a bit quicker than the other slow one, and selection sort usually doesn't swap a ton.

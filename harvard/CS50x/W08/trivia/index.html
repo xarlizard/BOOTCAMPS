@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+    <title>Trivia!</title>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Part 1: Multiple Choice
+            const question1 = document.querySelector('#question1');
+            const buttons1 = document.querySelectorAll('#part1-buttons button');
+            const feedback1 = document.querySelector('#feedback1');
+            const correctAnswer1 = 'Venus';
+
+            buttons1.forEach(button => {
+                button.addEventListener('click', function() {
+                    buttons1.forEach(btn => {
+                        btn.style.backgroundColor = '#d9edff'; // Reset button colors
+                    });
+                    feedback1.textContent = ''; // Reset feedback text
+
+                    if (this.textContent === correctAnswer1) {
+                        this.style.backgroundColor = 'green';
+                        feedback1.textContent = 'Correct!';
+                    } else {
+                        this.style.backgroundColor = 'red';
+                        feedback1.textContent = 'Incorrect';
+                        buttons1.forEach(btn => {
+                            if (btn.textContent === correctAnswer1) {
+                                btn.style.backgroundColor = 'green'; // Show correct answer
+                            }
+                        });
+                    }
+                });
+            });
+
+            // Part 2: Free Response
+            const question2 = document.querySelector('#question2');
+            const input2 = document.querySelector('#answer2');
+            const submit2 = document.querySelector('#submit2');
+            const feedback2 = document.querySelector('#feedback2');
+            const correctAnswer2 = 'Barcelona';
+
+            submit2.addEventListener('click', function() {
+                if (input2.value.trim().toLowerCase() === correctAnswer2.toLowerCase()) {
+                    input2.style.backgroundColor = 'green';
+                    feedback2.textContent = 'Correct!';
+                } else {
+                    input2.style.backgroundColor = 'red';
+                    feedback2.textContent = 'Incorrect';
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="header">
+        <h1>Trivia!</h1>
+    </div>
+
+    <div class="container">
+        <div class="section">
+            <h2>Part 1: Multiple Choice</h2>
+            <hr>
+            <h3 id="question1">What is the second planet from the Sun?</h3>
+            <div id="part1-buttons">
+                <button>Mars</button>
+                <button>Venus</button>
+                <button>Jupiter</button>
+            </div>
+            <p id="feedback1"></p>
+        </div>
+
+        <div class="section">
+            <h2>Part 2: Free Response</h2>
+            <hr>
+            <h3 id="question2">In what Spanish city are we currently located?</h3>
+            <input type="text" id="answer2">
+            <button id="submit2">Confirm Answer</button>
+            <p id="feedback2"></p>
+        </div>
+    </div>
+</body>
+</html>

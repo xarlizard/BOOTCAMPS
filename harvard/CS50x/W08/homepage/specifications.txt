@@ -1,0 +1,29 @@
+HTML Tags Used:
+- html
+- head
+- body
+- title
+- nav
+- div
+- ul
+- li
+- a
+- h1
+- h2
+- h3
+- p
+- hr
+- footer
+
+CSS Properties Used:
+- font-family
+- margin
+- padding
+- background-color
+- color
+
+JavaScript Usage:
+A simple JavaScript `console.log` statement is used on the homepage to showcase interactivity when the page loads.
+
+Bootstrap Usage:
+Bootstrap is integrated for responsive navigation (navbar), basic layout structure (container, row, col), a prominent introductory section (jumbotron), and button styling (btn).
