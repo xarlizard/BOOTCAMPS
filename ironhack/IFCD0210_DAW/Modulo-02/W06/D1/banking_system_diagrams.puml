@@ -1,0 +1,83 @@
+@startuml OnlineBankingSystem-UseCase
+left to right direction
+skinparam packageStyle rectangle
+
+actor User
+actor Admin
+
+rectangle "Online Banking System" {
+  usecase "Transfer Funds" as TF
+  usecase "Withdraw Money" as WM
+  usecase "Deposit Money" as DM
+  usecase "Freeze Account" as FA
+  usecase "View Account" as VA
+}
+
+User --> TF
+User --> WM
+User --> DM
+User --> VA
+Admin --> FA
+Admin --> VA
+
+@enduml
+
+@startuml OnlineBankingSystem-Class
+
+class User {
+  -String userId
+  -String name
+  -String email
+  +transferFunds(Account from, Account to, Money amount)
+  +withdraw(Account account, Money amount)
+  +deposit(Account account, Money amount)
+}
+
+class Admin {
+  -String adminId
+  -String name
+  +freezeAccount(Account account)
+  +unfreezeAccount(Account account)
+}
+
+class Account {
+  -String accountNumber
+  -User owner
+  -Money balance
+  -boolean isFrozen
+  +getBalance(): Money
+  +updateBalance(Money amount)
+  +freeze()
+  +unfreeze()
+}
+
+class Money {
+  -BigDecimal amount
+  -Currency currency
+  +add(Money other): Money
+  +subtract(Money other): Money
+  +multiply(double factor): Money
+}
+
+class Transaction {
+  -String transactionId
+  -Account fromAccount
+  -Account toAccount
+  -Money amount
+  -LocalDateTime timestamp
+  -TransactionType type
+  +execute()
+}
+
+enum TransactionType {
+  TRANSFER
+  WITHDRAWAL
+  DEPOSIT
+}
+
+User "1" -- "*" Account : owns
+Admin "1" -- "*" Account : manages
+Account "1" -- "*" Transaction : has
+Transaction "*" -- "1" Money : involves
+
+@enduml

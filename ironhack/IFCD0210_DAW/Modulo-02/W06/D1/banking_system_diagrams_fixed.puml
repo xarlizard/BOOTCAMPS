@@ -1,0 +1,84 @@
+@startuml OnlineBankingSystem-UseCase
+left to right direction
+skinparam packageStyle rectangle
+
+actor "User" as user
+actor "Admin" as admin
+
+rectangle "Online Banking System" {
+  usecase "Transfer Funds" as TF
+  usecase "Withdraw Money" as WM
+  usecase "Deposit Money" as DM
+  usecase "Freeze Account" as FA
+  usecase "View Account" as VA
+}
+
+user --> TF
+user --> WM
+user --> DM
+user --> VA
+admin --> FA
+admin --> VA
+
+@enduml
+
+@startuml OnlineBankingSystem-Class
+skinparam classAttributeIconSize 0
+
+class User {
+  -userId: String
+  -name: String
+  -email: String
+  +transferFunds(from: Account, to: Account, amount: Money)
+  +withdraw(account: Account, amount: Money)
+  +deposit(account: Account, amount: Money)
+}
+
+class Admin {
+  -adminId: String
+  -name: String
+  +freezeAccount(account: Account)
+  +unfreezeAccount(account: Account)
+}
+
+class Account {
+  -accountNumber: String
+  -owner: User
+  -balance: Money
+  -isFrozen: boolean
+  +getBalance(): Money
+  +updateBalance(amount: Money)
+  +freeze()
+  +unfreeze()
+}
+
+class Money {
+  -amount: BigDecimal
+  -currency: Currency
+  +add(other: Money): Money
+  +subtract(other: Money): Money
+  +multiply(factor: double): Money
+}
+
+class Transaction {
+  -transactionId: String
+  -fromAccount: Account
+  -toAccount: Account
+  -amount: Money
+  -timestamp: LocalDateTime
+  -type: TransactionType
+  +execute()
+}
+
+enum TransactionType {
+  TRANSFER
+  WITHDRAWAL
+  DEPOSIT
+}
+
+User "1" -- "*" Account : owns
+Admin "1" -- "*" Account : manages
+Account "1" -- "*" Transaction : has
+Transaction "*" -- "1" Money : involves
+
+@enduml
