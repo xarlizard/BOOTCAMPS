@@ -1,0 +1,30 @@
+# Maven and Java
+/target/
+*.class
+*.log
+*.jar
+*.war
+*.iml
+
+# IDE
+/.idea/
+*.iws
+*.ipr
+*.bak
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Test and database
+/src/test/resources/application.properties
+/src/test/resources/data.sql
+
+# Maven Wrapper
+/mvnw
+/mvnw.cmd
+/.mvn/
+
+# Misc
+*.swp
+*.swo
