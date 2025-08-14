@@ -1,0 +1,41 @@
+@startuml
+' CarBnB API - Class Diagram
+
+package "model" {
+  class User {
+    Long userId
+    String name
+    String email
+  }
+
+  class Car {
+    Long carId
+    String model
+    String type
+    User owner
+  }
+
+  class Reservation {
+    Long reservationId
+    LocalDate startDate
+    LocalDate endDate
+    User user
+    Car car
+  }
+}
+
+package "repository" {
+  interface UserRepository
+  interface CarRepository
+  interface ReservationRepository
+}
+
+User "1" --o "*" Car : owns
+User "1" --o "*" Reservation : makes
+Car "1" --o "*" Reservation : is reserved in
+
+CarRepository ..> Car
+UserRepository ..> User
+ReservationRepository ..> Reservation
+
+@enduml
