@@ -1,0 +1,7 @@
+.apellidos {
+  font-size: 2rem;
+  color: var(--color3);
+  text-align: center;
+  margin-bottom: 1rem;
+  font-family: var(--font-main);
+}

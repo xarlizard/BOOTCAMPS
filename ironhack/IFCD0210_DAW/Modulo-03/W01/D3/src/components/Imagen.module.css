@@ -1,0 +1,16 @@
+.imagenContainer {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.imagen {
+  width: 150px;
+  border-radius: var(--radius);
+  box-shadow: 0 4px 16px var(--color-shadow);
+  transition: transform 0.2s;
+}
+
+.imagen:hover {
+  transform: scale(1.05);
+}

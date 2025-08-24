@@ -1,0 +1,33 @@
+.listaAficiones {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto 1rem auto;
+  max-width: 320px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.aficion {
+  background: var(--color-bg);
+  color: var(--color2);
+  font-size: 1.1rem;
+  padding: 0.7rem 1.2rem;
+  border-radius: var(--radius);
+  box-shadow: 0 2px 8px var(--color-shadow);
+  font-family: var(--font-main);
+  text-align: center;
+  transition: background 0.2s, color 0.2s;
+}
+
+.aficion:hover {
+  background: var(--color2);
+  color: var(--color-white);
+}
+
+.header3 {
+  text-align: center;
+  margin-bottom: "1rem";
+  font-family: Segoe UI, Arial, sans-serif;
+  color: var(--color1);
+}
