@@ -1,0 +1,32 @@
+.aficiones-container {
+  background: linear-gradient(90deg, var(--color2) 0%, var(--color3) 100%);
+  border-radius: 12px;
+  padding: 1.5rem 2rem;
+  margin: 2rem 0;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.07);
+}
+
+.aficiones-title {
+  color: var(--color1);
+  font-size: 1.7rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.aficiones-list {
+  list-style: none;
+  padding: 0;
+}
+
+.aficiones-list li {
+  background: var(--color6);
+  margin-bottom: 0.7rem;
+  padding: 0.7rem 1rem;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  color: var(--color4);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+  display: flex;
+  align-items: center;
+}

@@ -1,0 +1,30 @@
+:root {
+  --color1: #2a4d69;
+  --color2: #e0eafc;
+  --color3: #cfdef3;
+  --color4: #4b6584;
+  --color5: #f7f7f7;
+  --color6: #fff;
+  --color-accent: #213547;
+  --color-bg-dark: #242424;
+  --color-bg-light: #ffffff;
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: var(--color-bg-dark);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: var(--color-accent);
+    background-color: var(--color-bg-light);
+  }
+}
