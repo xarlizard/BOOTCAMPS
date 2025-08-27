@@ -1,0 +1,64 @@
+.cancion-root {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.cancion-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: 0;
+  filter: blur(16px) brightness(0.7);
+  opacity: 0.7;
+}
+
+.cancion-card {
+  position: relative;
+  z-index: 1;
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: var(--radius);
+  box-shadow: 0 8px 32px var(--color-shadow);
+  padding: 2rem 2.5rem;
+  max-width: 400px;
+  text-align: center;
+  margin: auto;
+}
+
+.cancion-card h2 {
+  color: var(--color1);
+  margin-bottom: 1rem;
+}
+
+.cancion-card img {
+  width: 200px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px #0001;
+  margin-bottom: 1rem;
+}
+
+.volver-btn {
+  margin-top: 1.5rem;
+  background: var(--color2);
+  color: var(--color1);
+  border: none;
+  border-radius: var(--radius);
+  padding: 0.7rem 2rem;
+  font-size: 1.1rem;
+  font-family: var(--font-main);
+  box-shadow: 0 2px 8px var(--color-shadow);
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.volver-btn:hover {
+  background: var(--color1);
+  transform: scale(1.05);
+  color: var(--color2);
+}
