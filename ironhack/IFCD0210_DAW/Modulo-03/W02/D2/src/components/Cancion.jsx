@@ -1,17 +1,52 @@
 import { useParams, useNavigate } from "react-router";
+import { useEffect, useState } from "react";
+
 import styles from "./Cancion.module.css";
 
 import canciones from "../assets/data.json";
+
 import slugify from "../utils/slugify";
 
 const Cancion = () => {
   const { songName } = useParams();
   const navigate = useNavigate();
-  const cancion = canciones.find((c) => slugify(c.titulo) === songName);
+  const [notFound, setNotFound] = useState(false);
+  const [cancion, setCancion] = useState(null);
+
+  // Aseguramos que songName existe (si esto fuera un fetch async tambien funcionaria)
+  useEffect(() => {
+    if (!canciones || canciones.length === 0) return;
+    const found = canciones.find((c) => slugify(c.titulo) === songName);
+    if (!found) {
+      setNotFound(true);
+    } else {
+      setCancion(found);
+    }
+  }, [songName]);
+
+  useEffect(() => {
+    if (notFound) {
+      navigate("/404", { replace: true });
+    }
+  }, [notFound, navigate]);
+
+  if (!canciones || canciones.length === 0) {
+    return (
+      <div
+        className={styles["cancion-root"]}
+        style={{
+          textAlign: "center",
+          color: "var(--color1)",
+          fontSize: "2rem",
+        }}
+      >
+        Cargando...
+      </div>
+    );
+  }
 
   if (!cancion) {
-    navigate("/404", { replace: true });
-    return null;
+    return null; // Esperamos al useEffect
   }
 
   return (
