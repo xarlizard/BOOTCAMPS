@@ -1,0 +1,386 @@
+{
+  "info": {
+    "name": "CarBnB API",
+    "description": "Complete API collection for CarBnB application",
+    "version": "1.0.0",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Health Check",
+      "item": [
+        {
+          "name": "Get System Health",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test(\"Response has required fields\", function () {",
+                  "    const jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('status');",
+                  "    pm.expect(jsonData).to.have.property('version');",
+                  "    pm.expect(jsonData).to.have.property('database');",
+                  "});",
+                  "",
+                  "pm.test(\"System is healthy\", function () {",
+                  "    const jsonData = pm.response.json();",
+                  "    pm.expect(jsonData.status).to.eql('ok');",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/health",
+              "host": ["{{base_url}}"],
+              "path": ["api", "health"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Items CRUD",
+      "item": [
+        {
+          "name": "Create Item",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 201\", function () {",
+                  "    pm.response.to.have.status(201);",
+                  "});",
+                  "",
+                  "pm.test(\"Response has item data\", function () {",
+                  "    const jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('id');",
+                  "    pm.expect(jsonData).to.have.property('title');",
+                  "    pm.expect(jsonData).to.have.property('createdAt');",
+                  "    pm.expect(jsonData).to.have.property('updatedAt');",
+                  "    ",
+                  "    // Store the ID for subsequent requests",
+                  "    pm.environment.set('test_item_id', jsonData.id);",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"BMW X5 Test Car\",\n  \"description\": \"Test car created via Postman for API testing\",\n  \"tags\": [\"test\", \"bmw\", \"suv\", \"luxury\"]\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/items",
+              "host": ["{{base_url}}"],
+              "path": ["api", "items"]
+            }
+          }
+        },
+        {
+          "name": "Get All Items",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test(\"Response has data and meta\", function () {",
+                  "    const jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('data');",
+                  "    pm.expect(jsonData).to.have.property('meta');",
+                  "    pm.expect(jsonData.data).to.be.an('array');",
+                  "});",
+                  "",
+                  "pm.test(\"Meta has pagination info\", function () {",
+                  "    const jsonData = pm.response.json();",
+                  "    pm.expect(jsonData.meta).to.have.property('page');",
+                  "    pm.expect(jsonData.meta).to.have.property('pageSize');",
+                  "    pm.expect(jsonData.meta).to.have.property('total');",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/items",
+              "host": ["{{base_url}}"],
+              "path": ["api", "items"]
+            }
+          }
+        },
+        {
+          "name": "Search Items",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test(\"Search returns filtered results\", function () {",
+                  "    const jsonData = pm.response.json();",
+                  "    pm.expect(jsonData.data).to.be.an('array');",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/items?search=BMW&page=1&pageSize=10",
+              "host": ["{{base_url}}"],
+              "path": ["api", "items"],
+              "query": [
+                {
+                  "key": "search",
+                  "value": "BMW"
+                },
+                {
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "key": "pageSize",
+                  "value": "10"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Get Item by ID",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test(\"Response has item details\", function () {",
+                  "    const jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('id');",
+                  "    pm.expect(jsonData).to.have.property('title');",
+                  "    pm.expect(jsonData).to.have.property('tags');",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/items/{{test_item_id}}",
+              "host": ["{{base_url}}"],
+              "path": ["api", "items", "{{test_item_id}}"]
+            }
+          }
+        },
+        {
+          "name": "Update Item",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test(\"Item was updated\", function () {",
+                  "    const jsonData = pm.response.json();",
+                  "    pm.expect(jsonData.title).to.include('Updated');",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"Updated BMW X5 Test Car\",\n  \"description\": \"Updated description via Postman\",\n  \"tags\": [\"updated\", \"bmw\", \"suv\", \"luxury\", \"test\"]\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/items/{{test_item_id}}",
+              "host": ["{{base_url}}"],
+              "path": ["api", "items", "{{test_item_id}}"]
+            }
+          }
+        },
+        {
+          "name": "Delete Item",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 204\", function () {",
+                  "    pm.response.to.have.status(204);",
+                  "});",
+                  "",
+                  "pm.test(\"Response body is empty\", function () {",
+                  "    pm.expect(pm.response.text()).to.be.empty;",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/items/{{test_item_id}}",
+              "host": ["{{base_url}}"],
+              "path": ["api", "items", "{{test_item_id}}"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Error Scenarios",
+      "item": [
+        {
+          "name": "Create Item - Missing Title",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 400\", function () {",
+                  "    pm.response.to.have.status(400);",
+                  "});",
+                  "",
+                  "pm.test(\"Error message mentions title\", function () {",
+                  "    const jsonData = pm.response.json();",
+                  "    pm.expect(jsonData.message.toLowerCase()).to.include('title');",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"description\": \"Car without title\",\n  \"tags\": [\"test\"]\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/items",
+              "host": ["{{base_url}}"],
+              "path": ["api", "items"]
+            }
+          }
+        },
+        {
+          "name": "Get Non-existent Item",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 404\", function () {",
+                  "    pm.response.to.have.status(404);",
+                  "});",
+                  "",
+                  "pm.test(\"Error message indicates not found\", function () {",
+                  "    const jsonData = pm.response.json();",
+                  "    pm.expect(jsonData.message.toLowerCase()).to.include('not found');",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/items/99999",
+              "host": ["{{base_url}}"],
+              "path": ["api", "items", "99999"]
+            }
+          }
+        },
+        {
+          "name": "Invalid Route",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 404\", function () {",
+                  "    pm.response.to.have.status(404);",
+                  "});",
+                  "",
+                  "pm.test(\"Error indicates route not found\", function () {",
+                  "    const jsonData = pm.response.json();",
+                  "    pm.expect(jsonData.message).to.include('not found');",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/invalid-route",
+              "host": ["{{base_url}}"],
+              "path": ["api", "invalid-route"]
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://localhost:3000",
+      "type": "string"
+    }
+  ]
+}
